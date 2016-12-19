@@ -14,6 +14,7 @@
     <ProjectGuid>{836B49AB-E26B-4ED9-8487-F2D297238FAF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>core</RootNamespace>
+    <ProjectName>skia</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -48,6 +49,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\include\core ; ..\..\include\config</AdditionalIncludeDirectories>
+      <AdditionalOptions>@config.mk %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -65,7 +67,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\include\core;..\..\include\config</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <AdditionalOptions>@config.mk %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -170,6 +174,58 @@
     <ClCompile Include="..\..\src\core\SkUtils.cpp" />
     <ClCompile Include="..\..\src\core\SkWriter32.cpp" />
     <ClCompile Include="..\..\src\core\SkXfermode.cpp" />
+    <ClCompile Include="..\..\src\opts\SkBitmapProcState_opts_none.cpp" />
+    <ClCompile Include="..\..\src\opts\SkBlitRow_opts_none.cpp" />
+    <ClCompile Include="..\..\src\opts\SkUtils_opts_none.cpp" />
+    <ClCompile Include="..\..\src\ports\SkFontHost_win.cpp" />
+    <ClCompile Include="..\..\src\ports\SkGlobals_global.cpp" />
+    <ClCompile Include="..\..\src\ports\SkOSFile_stdio.cpp" />
+    <ClCompile Include="..\..\src\ports\SkThread_win.cpp" />
+    <ClCompile Include="..\..\src\ports\SkTime_win.cpp" />
+    <ClCompile Include="..\..\src\ports\SkXMLParser_empty.cpp" />
+    <ClCompile Include="..\..\src\utils\SkBoundaryPatch.cpp" />
+    <ClCompile Include="..\..\src\utils\SkCamera.cpp" />
+    <ClCompile Include="..\..\src\utils\SkColorMatrix.cpp" />
+    <ClCompile Include="..\..\src\utils\SkCubicInterval.cpp" />
+    <ClCompile Include="..\..\src\utils\SkCullPoints.cpp" />
+    <ClCompile Include="..\..\src\utils\SkDumpCanvas.cpp" />
+    <ClCompile Include="..\..\src\utils\SkInterpolator.cpp" />
+    <ClCompile Include="..\..\src\utils\SkLayer.cpp" />
+    <ClCompile Include="..\..\src\utils\SkMeshUtils.cpp" />
+    <ClCompile Include="..\..\src\utils\SkNinePatch.cpp" />
+    <ClCompile Include="..\..\src\utils\SkNWayCanvas.cpp" />
+    <ClCompile Include="..\..\src\utils\SkParse.cpp" />
+    <ClCompile Include="..\..\src\utils\SkParseColor.cpp" />
+    <ClCompile Include="..\..\src\utils\SkParsePath.cpp" />
+    <ClCompile Include="..\..\src\utils\SkProxyCanvas.cpp" />
+    <ClCompile Include="..\..\src\utils\SkSfntUtils.cpp" />
+    <ClCompile Include="..\..\src\utils\SkUnitMappers.cpp" />
+    <ClCompile Include="..\..\src\views\SkBGViewArtist.cpp" />
+    <ClCompile Include="..\..\src\views\SkBorderView.cpp" />
+    <ClCompile Include="..\..\src\views\SkEvent.cpp" />
+    <ClCompile Include="..\..\src\views\SkEventSink.cpp" />
+    <ClCompile Include="..\..\src\views\SkImageView.cpp" />
+    <ClCompile Include="..\..\src\views\SkListView.cpp" />
+    <ClCompile Include="..\..\src\views\SkListWidget.cpp" />
+    <ClCompile Include="..\..\src\views\SkMetaData.cpp" />
+    <ClCompile Include="..\..\src\views\SkOSMenu.cpp" />
+    <ClCompile Include="..\..\src\views\SkOSSound.cpp" />
+    <ClCompile Include="..\..\src\views\SkParsePaint.cpp" />
+    <ClCompile Include="..\..\src\views\SkProgressBarView.cpp" />
+    <ClCompile Include="..\..\src\views\SkProgressView.cpp" />
+    <ClCompile Include="..\..\src\views\SkScrollBarView.cpp" />
+    <ClCompile Include="..\..\src\views\SkStackViewLayout.cpp" />
+    <ClCompile Include="..\..\src\views\SkStaticTextView.cpp" />
+    <ClCompile Include="..\..\src\views\SkTagList.cpp" />
+    <ClCompile Include="..\..\src\views\SkView.cpp" />
+    <ClCompile Include="..\..\src\views\SkViewInflate.cpp" />
+    <ClCompile Include="..\..\src\views\SkViewPriv.cpp" />
+    <ClCompile Include="..\..\src\views\SkWidget.cpp" />
+    <ClCompile Include="..\..\src\views\SkWidgets.cpp" />
+    <ClCompile Include="..\..\src\views\SkWidgetViews.cpp" />
+    <ClCompile Include="..\..\src\views\SkWindow.cpp" />
+    <ClCompile Include="..\..\src\xml\SkDOM.cpp" />
+    <ClCompile Include="..\..\src\xml\SkXMLParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\core\Sk64.h" />
@@ -212,7 +268,6 @@
     <ClInclude Include="..\..\include\core\SkMath.h" />
     <ClInclude Include="..\..\include\core\SkMatrix.h" />
     <ClInclude Include="..\..\include\core\SkMMapStream.h" />
-    <ClInclude Include="..\..\include\core\SkOSFile.h" />
     <ClInclude Include="..\..\include\core\SkPackBits.h" />
     <ClInclude Include="..\..\include\core\SkPaint.h" />
     <ClInclude Include="..\..\include\core\SkPath.h" />
@@ -295,6 +350,8 @@
     <ClInclude Include="..\..\src\core\SkStrokerPriv.h" />
     <ClInclude Include="..\..\src\core\SkTemplatesPriv.h" />
     <ClInclude Include="..\..\src\core\SkTSort.h" />
+    <ClInclude Include="..\..\src\views\SkTagList.h" />
+    <ClInclude Include="..\..\src\views\SkViewPriv.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

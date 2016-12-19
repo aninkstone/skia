@@ -193,7 +193,7 @@ SkEventSinkID SkWidgetView::GetWidgetEventSinkID(const SkEvent& evt)
 		this->postWidgetEvent();
 		return true;
 	}
-	return this->INHERITED::onEvent(evt);
+	return SkButtonView::INHERITED::onEvent(evt);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
