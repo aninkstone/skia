@@ -642,6 +642,7 @@ void SkFontHost::FilterRec(SkScalerContext::Rec* rec) {
     if (SkMask::FormatIsLCD((SkMask::Format)rec->fMaskFormat)) {
         rec->fMaskFormat = SkMask::kA8_Format;
     }
+	rec->fMaskFormat = SkMask::kA8_Format;
 }
 
 #endif // WIN32

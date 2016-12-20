@@ -19,12 +19,12 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -209,7 +209,6 @@
     <ClCompile Include="..\..\src\views\SkListWidget.cpp" />
     <ClCompile Include="..\..\src\views\SkMetaData.cpp" />
     <ClCompile Include="..\..\src\views\SkOSMenu.cpp" />
-    <ClCompile Include="..\..\src\views\SkOSSound.cpp" />
     <ClCompile Include="..\..\src\views\SkParsePaint.cpp" />
     <ClCompile Include="..\..\src\views\SkProgressBarView.cpp" />
     <ClCompile Include="..\..\src\views\SkProgressView.cpp" />
